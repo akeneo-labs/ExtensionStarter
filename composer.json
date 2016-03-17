@@ -1,0 +1,34 @@
+{
+  "name": "akeneo-labs/extension-starter",
+  "type": "symfony-bundle",
+  "description": "Akeneo PIM extension starter",
+  "keywords": ["pim", "akeneo", "extension"],
+  "license": "OSL-3.0",
+  "authors": [
+    {
+      "name": "JM Leroux <jean-marie.leroux@akeneo.com>"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/akeneo/pim-community-dev.git",
+      "branch": "master"
+    }
+  ],
+  "require": {
+    "akeneo/pim-community-dev": "1.5.*",
+    "doctrine/migrations": "1.0.0-alpha3@alpha"
+  }
+  "autoload": {
+    "psr-4": { "Acme\\Bundle\\DemoExtensionBundle\\": "" }
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1.x-dev"
+    }
+  }
+}
