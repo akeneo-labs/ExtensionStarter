@@ -22,6 +22,6 @@ Register your new bundle in your AppKernel.php,
 
 ```
 $bundles = [
-    new Acme\Bundle\DemoExtensionBundle\AcmeDemoExtensionBundle(),
+    new Acme\Bundle\AcmeExtensionBundle\AcmeExtensionBundle(),
 ];
 ```
