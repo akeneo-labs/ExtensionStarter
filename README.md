@@ -6,6 +6,11 @@
 
 ## Requirements
 
+![](https://img.shields.io/badge/PIM%20community-1.3-red.svg)
+![](https://img.shields.io/badge/PIM%20community-1.4-red.svg)
+![](https://img.shields.io/badge/PIM%20community-1.5-green.svg)
+
+
 | ExtensionStarter | Akeneo PIM Community Edition |
 |:----------------:|:----------------------------:|
 | v0.1.*           | v1.5.*                       |
