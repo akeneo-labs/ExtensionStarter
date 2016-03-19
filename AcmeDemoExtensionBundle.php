@@ -5,7 +5,7 @@ namespace Acme\Bundle\DemoExtensionBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * Automatic classification bundle
+ * Automatic classification bundle.
  *
  * @author    Your name <your email>
  * @copyright 2016 Acme
