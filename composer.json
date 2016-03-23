@@ -27,11 +27,7 @@
     "require-dev": {
         "fabpot/php-cs-fixer": "^1.11"
     },
-    "autoload": {
-        "psr-4": {
-            "Acme\\Bundle\\DemoExtensionBundle\\": ""
-        }
-    },
+    "target-dir": "Acme/Bundle/DemoExtensionBundle",
     "config": {
         "bin-dir": "bin"
     },
