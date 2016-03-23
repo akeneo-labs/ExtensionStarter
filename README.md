@@ -15,20 +15,57 @@
 |:----------------:|:----------------------------:|
 | v0.1.*           | v1.5.*                       |
 
-## Installation
+## Using this starter kit
 
-Add the following dependency to your Akeneo PIM project with this shell command:
+### Context
+Your extension is meant to work as part of an existing PIM installation,
+thus we will use PIM Community Standard Edition to host the connector.
+
+### Initialisation
+Create a new host project with the Standard Edition
 
 ```
-composer require "akeneo-labs/extension-starter" "0.1.0";
+composer create-project --prefer-dist akeneo/pim-community-standard /path/to/project "1.5.*@stable"
+cd /path/to/project
 ```
 
-Register your new bundle in your AppKernel.php,
+This will download the standard edition without git informations.
+
+Then, clone the starter kit
 
 ```
-$bundles = [
-    new Acme\Bundle\AcmeExtensionBundle\AcmeExtensionBundle(),
-];
+composer require akeneo-labs/extension-starter 0.1.0 --prefer-dist
+```
+
+### Customization
+You will need to rename your extension according to the chosen name.
+Let's say you work for the WorldCompany and the connector name is WorldConnector.
+
+You will have to move your component inside the vendor directory and rename it according to what vendor name you want to use.
+A widely used practice is to use your company name.
+
+```
+cd vendor
+mkdir world-company
+mv akeneo-labs/extension-starter world-company/world-connector
+cd world-company/world-connector
+mv Acme WorldCompany
+```
+
+Change namespaces accordingly:
+
+```
+find WorldCompany/ -name '*.php' -o -name 'composer.json' -type f -print0 | xargs -0 sed -i 's#Acme#WorldCompany#g'
+cd WorldCompany/Bundle/DemoExtensionBundle/
+cp doc/composer.json.dist composer.json
+sed -i 's#Acme#WorldCompany#g' composer.json
+sed -i 's#acme#world-company#g' composer.json
+```
+And finally, clean up all the starter kit initialization files:
+
+```
+rm -f doc/*
+echo '# Demo extension' > README.md
 ```
 
 ## Best practices
