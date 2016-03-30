@@ -18,7 +18,7 @@
 ## Using this starter kit
 
 ### Context
-Your extension is meant to work as part of an existing PIM installation,
+Our extension is meant to work as part of an existing PIM installation,
 thus we will use PIM Community Standard Edition to host the connector.
 This example host container will be at /tmp/pim-standard-edition on our filesystem. 
 
@@ -41,21 +41,19 @@ composer create-project --prefer-dist akeneo/pim-community-standard ${PIM_PATH} 
 This will download the standard edition without git informations.
 
 ### Initialisation of the starter kit
-Your new extension will be at src/WorldCompany/Bundle/WorldConnectorBundle 
+We will create the project in a WorldCompany (company name) folder and the new extension
+will be at src/WorldCompany/WorldConnectorBundle 
 
 ```
 cd ${PIM_PATH}/src
-mkdir -p ${COMPANY_NAME}/Bundle
-cd ${COMPANY_NAME}/Bundle
-BUNDLE_NAME=${EXTENSION_NAME}Bundle
-composer create-project akeneo-labs/extension-starter ${BUNDLE_NAME} -s alpha
+composer create-project akeneo-labs/extension-starter ${COMPANY_NAME} -s alpha
 ```
 
 ### Customization
-Custom composer.json to replace company name and extension name
+Customise composer.json to replace company name and extension name
 
 ```
-cd ${BUNDLE_NAME}
+cd ${COMPANY_NAME}
 cp doc/composer.json.dist composer.json
 sed -i "s#Acme#${COMPANY_NAME}#g" composer.json
 sed -i "s#acme#${COMPANY_NAME}#g" composer.json
@@ -66,6 +64,7 @@ sed -i "s#demo-extension#${EXTENSION_NAME}#g" composer.json
 Rename files accordingly to the chosen names:
 
 ```
+BUNDLE_NAME=${EXTENSION_NAME}Bundle
 mv DemoExtensionBundle.php ${BUNDLE_NAME}.php
 mv DependencyInjection/DemoExtension.php DependencyInjection/${EXTENSION_NAME}.php
 ```
@@ -77,12 +76,34 @@ find . -name '*.php' -type f -print0 | xargs -0 sed -i "s#Acme#${COMPANY_NAME}#g
 find . -name '*.php' -type f -print0 | xargs -0 sed -i "s#DemoExtension#${EXTENSION_NAME}#g"
 ```
 
-And finally, clean up all the starter kit initialization files:
+We must also add a PSR-4 autoload entry for our extension in `composer.json`:
+
+```
+    "autoload": {
+        "psr-4": {
+            "WorldCompany\\Bundle\\WorldConnectorBundle\\": "src/WorldCompany"
+        }
+    },
+```
+
+Then clean up all the starter kit initialization files:
 
 ```
 rm -f doc/*
+rm -rf vendor
 echo "# ${EXTENSION_NAME} extension" > README.md
 ```
+
+And finally update the composer autoloader: 
+
+```
+cd ${PIM_PATH}
+composer dump-autoload
+```
+
+#### Working in the `vendor` directory
+If our extension need some composer dependencies, we will have no choice but to work in the `vendor` to make it
+work with our Standard Edition installation.
 
 #### TODO
 Working with symlink
