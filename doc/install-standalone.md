@@ -13,12 +13,14 @@ EXTENSION_NAME=WorldExtension
 ### Initialisation of the Standard Edition
 In this kind of organization, we will work *inside* the host project.
 
+```
 pim-standard-edition
 └── src
     └── WorldCompany
         ├── WorldConnectorExtension.php
         ├── composer.json
         └── ...
+```
 
 Create a new host project with the Standard Edition
 
