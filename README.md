@@ -112,7 +112,7 @@ Working with symlink
 
 We maintain an online documentation about
 [best practices for extensions development]
-(http://docs.akeneo.com/1.5/reference/best_practices/reusable_bundles.html).
+(http://docs.akeneo.com/latest/reference/best_practices/reusable_bundle.html).
 
 ## Other documentation
 * Documentation about [creating a connector from scratch](http://docs.akeneo.com/latest/contributing/create_connector.html).
