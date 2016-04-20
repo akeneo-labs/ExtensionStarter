@@ -40,79 +40,40 @@ composer create-project --prefer-dist akeneo/pim-community-standard ${PIM_PATH} 
 
 This will download the standard edition without git informations.
 
-### Initialisation of the starter kit
-We will create the project in a WorldCompany (company name) folder and the new extension
-will be at src/WorldCompany/WorldConnectorBundle 
+At this point, you have three options to develop your extension:
+
+- work directly in the standard edition src directory
+- work in the standard edition src directory via symbolic link
+- work in the vendors directory 
+
+#### Workin in the `src` directory
+In this kind of organization, we will work *inside* the host project.
 
 ```
-cd ${PIM_PATH}/src
-composer create-project akeneo-labs/extension-starter ${COMPANY_NAME} -s alpha
+pim-standard-edition
+└── src
+    └── WorldCompany
+        ├── WorldConnectorExtension.php
+        ├── composer.json
+        └── ...
 ```
 
-### Customization
-Customise composer.json to replace company name and extension name
+The complete process is detailled in the [install-standalone.md](doc/install-standalone.md) documentation.
 
-```
-cd ${COMPANY_NAME}
-cp doc/composer.json.dist composer.json
-sed -i "s#Acme#${COMPANY_NAME}#g" composer.json
-sed -i "s#acme#${COMPANY_NAME}#g" composer.json
-sed -i "s#DemoExtension#${EXTENSION_NAME}#g" composer.json
-sed -i "s#demo-extension#${EXTENSION_NAME}#g" composer.json
-```
-
-Rename files accordingly to the chosen names:
-
-```
-BUNDLE_NAME=${EXTENSION_NAME}Bundle
-mv DemoExtensionBundle.php ${BUNDLE_NAME}.php
-mv DependencyInjection/DemoExtension.php DependencyInjection/${EXTENSION_NAME}.php
-```
-
-Change namespaces accordingly:
-
-```
-find . -name '*.php' -type f -print0 | xargs -0 sed -i "s#Acme#${COMPANY_NAME}#g"
-find . -name '*.php' -type f -print0 | xargs -0 sed -i "s#DemoExtension#${EXTENSION_NAME}#g"
-```
-
-We must also add a PSR-4 autoload entry for our extension in `composer.json`:
-
-```
-    "autoload": {
-        "psr-4": {
-            "WorldCompany\\Bundle\\WorldConnectorBundle\\": "src/WorldCompany"
-        }
-    },
-```
-
-Then clean up all the starter kit initialization files:
-
-```
-rm -f doc/*
-rm -rf vendor
-echo "# ${EXTENSION_NAME} extension" > README.md
-```
-
-And finally update the composer autoloader: 
-
-```
-cd ${PIM_PATH}
-composer dump-autoload
-```
+#### Workin with a symbolic link
+TODO
 
 #### Working in the `vendor` directory
 If our extension need some composer dependencies, we will have no choice but to work in the `vendor` to make it
 work with our Standard Edition installation.
 
-#### TODO
-Working with symlink
-
 ## Best practices
-
 We maintain an online documentation about
 [best practices for extensions development]
 (http://docs.akeneo.com/latest/reference/best_practices/reusable_bundle.html).
+
+## Features checklist
+We also maintain a checklist of features you should check for a connector or an extension : [doc/checklist.md](doc/checklist.md)
 
 ## Other documentation
 * Documentation about [creating a connector from scratch](http://docs.akeneo.com/latest/contributing/create_connector.html).
