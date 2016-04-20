@@ -68,7 +68,6 @@ If our extension need some composer dependencies, we will have no choice but to 
 work with our Standard Edition installation.
 
 ## Best practices
-
 We maintain an online documentation about
 [best practices for extensions development]
 (http://docs.akeneo.com/1.5/reference/best_practices/reusable_bundles.html).

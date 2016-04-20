@@ -1,4 +1,4 @@
-# Integrated instalation
+# Integrated installation
 
 ## Context
 Let's say you work for the WorldCompany and the connector name is WorldExtension.
