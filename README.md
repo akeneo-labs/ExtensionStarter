@@ -72,6 +72,9 @@ We maintain an online documentation about
 [best practices for extensions development]
 (http://docs.akeneo.com/1.5/reference/best_practices/reusable_bundles.html).
 
+## Features checklist
+We also maintain a checklist of features you should check for a connector or an extension : [doc/checklist.md](doc/checklist.md)
+
 ## Other documentation
 * Documentation about [creating a connector from scratch](http://docs.akeneo.com/latest/contributing/create_connector.html).
 * Do not forget to check the [PIM cookbook](http://docs.akeneo.com/latest/cookbook/index.html)
