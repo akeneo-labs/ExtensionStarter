@@ -16,40 +16,40 @@ You should not fetch all PIM entites in a single DB request, because it can be v
 #### Documentation
 Your connector should be well documented to ease the use and the understanding.
 Either use a README file or a “doc” folder to store your documentation.
+
 You could also indicate PIM compatible versions. It can be done in a table listing the different version, or you can use some kind of visual indcation like shields.io badges :
-https://img.shields.io/badge/Pim%20community-1.3-green.svg
-https://img.shields.io/badge/Pim%20enterprise-1.3-red.svg
+![](https://img.shields.io/badge/Pim%20community-1.3-green.svg)
+![](https://img.shields.io/badge/Pim%20enterprise-1.3-red.svg)
 
 #### Installation
 Installation can be part of the documentation, but you can also provide installation scripts or commands.
 
 ### Community edition
 Check these exports with your connector enabled :
-Products
-Attributes
-Categories
-Families
-Attribute groups
-Attribute options
-Reference data
-Variant groups
-Associations
+- Products
+- Attributes
+- Categories
+- Families
+- Attribute groups
+- Attribute options
+- Reference data
+- Variant groups
+- Associations
 
 #### Mapping
-Your connector may need to map PIM entities fields to other fields or properties of the target system. This task is usually done in the processor.
-
+- Your connector may need to map PIM entities fields to other fields or properties of the target system. This task is usually done in the processor.
 
 #### Localization + translations
-You should keep in mind the localized values for import/export.
-You could also provide translations for yous cutom fields, flash messages, etc.
+- You should keep in mind the localized values for import/export.
+- You could also provide translations for yous cutom fields, flash messages, etc.
 
 #### Notifications
-Your connector should emit proper notifications after import and/or export.
-Errors should be displayed.
+- Your connector should emit proper notifications after import and/or export.
+- Errors should be displayed.
 
 ### Enterprise edition
 
 Check these exports with your connector enabled :
-Published products
-Drafts
-Assets
+- Published products
+- Drafts
+- Assets
