@@ -1,6 +1,6 @@
 <?php
 
-namespace Acme\Bundle\DemoExtensionBundle\DependencyInjection;
+namespace Acme\Bundle\DemoConnectorBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -14,7 +14,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
  * @copyright 2016 Acme
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-class DemoExtension extends Extension
+class DemoConnectorExtension extends Extension
 {
     /**
      * {@inheritdoc}

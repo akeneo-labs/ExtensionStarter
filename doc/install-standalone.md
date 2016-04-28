@@ -1,13 +1,13 @@
 # Integrated installation
 
 ## Context
-Let's say you work for the WorldCompany and the connector name is WorldExtension.
+Let's say you work for the WorldCompany and the connector name is WorldConnector.
 A widely used practice is to use the company name as the root namespace.
 
 ```
 COMPANY_NAME=WorldCompany
 PIM_PATH=/tmp/pim-standard-edition
-EXTENSION_NAME=WorldExtension
+CONNECTOR_NAME=WorldConnector
 ```
 
 ### Initialisation of the Standard Edition
@@ -17,7 +17,7 @@ In this kind of organization, we will work *inside* the host project.
 pim-standard-edition
 └── src
     └── WorldCompany
-        ├── WorldConnectorExtension.php
+        ├── WorldConnectorBundle.php
         ├── composer.json
         └── ...
 ```
@@ -47,23 +47,23 @@ cd ${COMPANY_NAME}
 cp doc/composer.json.dist composer.json
 sed -i "s#Acme#${COMPANY_NAME}#g" composer.json
 sed -i "s#acme#${COMPANY_NAME}#g" composer.json
-sed -i "s#DemoExtension#${EXTENSION_NAME}#g" composer.json
-sed -i "s#demo-extension#${EXTENSION_NAME}#g" composer.json
+sed -i "s#DemoConnectorExtension#${CONNECTOR_NAME}#g" composer.json
+sed -i "s#demo-extension#${CONNECTOR_NAME}#g" composer.json
 ```
 
 Rename files accordingly to the chosen names:
 
 ```
-BUNDLE_NAME=${EXTENSION_NAME}Bundle
-mv DemoExtensionBundle.php ${BUNDLE_NAME}.php
-mv DependencyInjection/DemoExtension.php DependencyInjection/${EXTENSION_NAME}.php
+BUNDLE_NAME=${CONNECTOR_NAME}Bundle
+mv DemoConnectorBundle.php ${BUNDLE_NAME}.php
+mv DependencyInjection/DemoConnectorExtension.php DependencyInjection/${CONNECTOR_NAME}Extension.php
 ```
 
 Change namespaces accordingly:
 
 ```
 find . -name '*.php' -type f -print0 | xargs -0 sed -i "s#Acme#${COMPANY_NAME}#g"
-find . -name '*.php' -type f -print0 | xargs -0 sed -i "s#DemoExtension#${EXTENSION_NAME}#g"
+find . -name '*.php' -type f -print0 | xargs -0 sed -i "s#DemoConnectorBundle#${CONNECTOR_NAME}Bundle#g"
 ```
 
 We must also add a PSR-4 autoload entry for our extension in `composer.json`:
@@ -81,7 +81,8 @@ Then clean up all the starter kit initialization files:
 ```
 rm -f doc/*
 rm -rf vendor
-echo "# ${EXTENSION_NAME} extension" > README.md
+rm -rf .git
+echo "# ${CONNECTOR_NAME} extension" > README.md
 ```
 
 And finally update the composer autoloader: 
