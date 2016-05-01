@@ -36,7 +36,7 @@ will be at src/WorldCompany/WorldConnectorBundle
 
 ```
 cd ${PIM_PATH}/src
-composer create-project akeneo-labs/extension-starter ${COMPANY_NAME} -s alpha
+composer create-project akeneo-labs/extension-starter ${COMPANY_NAME}
 ```
 
 ### Customization
