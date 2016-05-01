@@ -75,11 +75,26 @@ rm -rf .git
 echo "# ${CONNECTOR_NAME} extension" > README.md
 ```
 
-We must also add a PSR-4 autoload entry for our extension in the host composer `composer.json`:
+And finally, you can initialize a brand new git repository to start versioning your work:
+ 
+```
+git init
+```
+
+### Activation
+To use your new bundle in the host Standard Edition, you have to activate it in the `app/AppKernel.php`:
 
 ```
 cd ${PIM_PATH}
-vi comoser.json
+vi app/AppKernel.php
+```
+
+and register your bundle in the `registerBundles()` method.
+
+You must also add a PSR-4 autoload entry for our extension in the host composer `composer.json`:
+
+```
+vi composer.json
 ```
 
 Modify the autoload section:
@@ -97,3 +112,5 @@ And finally update the composer autoloader:
 ```
 composer dump-autoload
 ```
+
+You should now be able to test your bundle in your browser.
