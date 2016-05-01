@@ -63,17 +63,7 @@ Change namespaces accordingly:
 
 ```
 find . -name '*.php' -type f -print0 | xargs -0 sed -i "s#Acme#${COMPANY_NAME}#g"
-find . -name '*.php' -type f -print0 | xargs -0 sed -i "s#DemoConnectorBundle#${CONNECTOR_NAME}Bundle#g"
-```
-
-We must also add a PSR-4 autoload entry for our extension in `composer.json`:
-
-```
-    "autoload": {
-        "psr-4": {
-            "WorldCompany\\Bundle\\WorldConnectorBundle\\": "src/WorldCompany"
-        }
-    },
+find . -name '*.php' -type f -print0 | xargs -0 sed -i "s#DemoConnector#${CONNECTOR_NAME}#g"
 ```
 
 Then clean up all the starter kit initialization files:
@@ -85,9 +75,25 @@ rm -rf .git
 echo "# ${CONNECTOR_NAME} extension" > README.md
 ```
 
-And finally update the composer autoloader: 
+We must also add a PSR-4 autoload entry for our extension in the host composer `composer.json`:
 
 ```
 cd ${PIM_PATH}
+vi comoser.json
+```
+
+Modify the autoload section:
+
+```
+    "autoload": {
+        "psr-4": {
+            "WorldCompany\\Bundle\\WorldConnectorBundle\\": "src/WorldCompany"
+        }
+    },
+```
+
+And finally update the composer autoloader: 
+
+```
 composer dump-autoload
 ```
