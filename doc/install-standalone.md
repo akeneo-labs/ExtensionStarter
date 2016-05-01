@@ -66,7 +66,8 @@ find . -name '*.php' -type f -print0 | xargs -0 sed -i "s#Acme#${COMPANY_NAME}#g
 find . -name '*.php' -type f -print0 | xargs -0 sed -i "s#DemoConnector#${CONNECTOR_NAME}#g"
 ```
 
-Then clean up all the starter kit initialization files:
+### Cleanup
+At this point, you can clean all the starter kit initialization files:
 
 ```
 rm -f doc/*
@@ -75,7 +76,7 @@ rm -rf .git
 echo "# ${CONNECTOR_NAME} extension" > README.md
 ```
 
-And finally, you can initialize a brand new git repository to start versioning your work:
+And finally initialize a brand new git repository to start versioning your work:
  
 ```
 git init
