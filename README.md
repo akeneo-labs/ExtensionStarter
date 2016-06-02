@@ -47,7 +47,7 @@ At this point, you have three options to develop your extension:
 - work in the vendors directory 
 
 #### Workin in the `src` directory
-In this kind of organization, we will work *inside* the host project.
+In this kind of organization, we will work *inside* the host project. You can work in this mode when you really start your project from scratch. And when you will have made some commmits, you will probably switch working with a symlink or in the vendor directory.
 
 ```
 pim-standard-edition
