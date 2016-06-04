@@ -8,6 +8,7 @@ A widely used practice is to use the company name as the root namespace.
 COMPANY_NAME=WorldCompany
 PIM_PATH=/tmp/pim-standard-edition
 CONNECTOR_NAME=WorldConnector
+BUNDLE_NAME=${CONNECTOR_NAME}Bundle
 ```
 
 ### Initialisation of the Standard Edition
@@ -47,14 +48,13 @@ cd ${COMPANY_NAME}
 cp doc/composer.json.dist composer.json
 sed -i "s#Acme#${COMPANY_NAME}#g" composer.json
 sed -i "s#acme#${COMPANY_NAME}#g" composer.json
-sed -i "s#DemoConnectorExtension#${CONNECTOR_NAME}#g" composer.json
+sed -i "s#DemoConnectorBundle#${BUNDLE_NAME}#g" composer.json
 sed -i "s#demo-extension#${CONNECTOR_NAME}#g" composer.json
 ```
 
 Rename files accordingly to the chosen names:
 
 ```
-BUNDLE_NAME=${CONNECTOR_NAME}Bundle
 mv DemoConnectorBundle.php ${BUNDLE_NAME}.php
 mv DependencyInjection/DemoConnectorExtension.php DependencyInjection/${CONNECTOR_NAME}Extension.php
 ```
