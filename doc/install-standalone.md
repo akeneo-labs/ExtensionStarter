@@ -41,6 +41,7 @@ composer create-project akeneo-labs/extension-starter ${COMPANY_NAME}
 
 ### Customization
 Customise composer.json to replace company name and extension name
+(Note for OS X users: change sed command paramteters into `sed -i "" "s#...`)
 
 ```
 cd ${COMPANY_NAME}
