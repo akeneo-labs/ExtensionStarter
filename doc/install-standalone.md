@@ -32,7 +32,7 @@ This will download the standard edition without git informations.
 
 ### Initialisation of the starter kit
 We will create the project in a WorldCompany (company name) folder and the new extension
-will be at src/WorldCompany/WorldConnectorBundle 
+will be at src/WorldCompany/WorldConnectorBundle
 
 ```
 cd ${PIM_PATH}/src
@@ -70,14 +70,12 @@ find . -name '*.php' -type f -print0 | xargs -0 sed -i "s#DemoConnector#${CONNEC
 At this point, you can clean all the starter kit initialization files:
 
 ```
-rm -f doc/*
-rm -rf vendor
-rm -rf .git
+rm -rf bin vendor .git doc/*
 echo "# ${CONNECTOR_NAME} extension" > README.md
 ```
 
 And finally initialize a brand new git repository to start versioning your work:
- 
+
 ```
 git init
 ```
@@ -108,7 +106,7 @@ Modify the autoload section:
     },
 ```
 
-And finally update the composer autoloader: 
+And finally update the composer autoloader:
 
 ```
 composer dump-autoload
