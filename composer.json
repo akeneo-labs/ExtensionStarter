@@ -25,7 +25,7 @@
         "doctrine/migrations": "1.0.0-alpha3@alpha"
     },
     "require-dev": {
-        "fabpot/php-cs-fixer": "^1.11"
+        "friendsofphp/php-cs-fixer": "^1.11"
     },
     "autoload": {
         "psr-4": {
