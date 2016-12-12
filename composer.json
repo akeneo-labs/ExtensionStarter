@@ -21,15 +21,15 @@
         }
     ],
     "require": {
-        "akeneo/pim-community-dev": "1.5.*",
+        "akeneo/pim-community-dev": "1.6.*",
         "doctrine/migrations": "1.0.0-alpha3@alpha"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^1.11"
+        "friendsofphp/php-cs-fixer": "@stable"
     },
     "autoload": {
         "psr-4": {
-            "Acme\\Bundle\\DemoConnectorBundle\\": ""
+            "Acme\\Bundle\\DemoConnectorBundle\\": "src/"
         }
     },
     "config": {
@@ -37,7 +37,8 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.1.x-dev"
+            "dev-master": "0.2.x-dev",
+            "dev-0.1": "0.1.x-dev"
         }
     }
 }

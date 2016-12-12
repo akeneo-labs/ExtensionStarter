@@ -2,9 +2,9 @@
 
 [Experimental] Starter kit to quickly setup your own Akeneo PIM Extension
 
-![](https://img.shields.io/badge/PIM%20community-1.3-red.svg)
 ![](https://img.shields.io/badge/PIM%20community-1.4-red.svg)
 ![](https://img.shields.io/badge/PIM%20community-1.5-green.svg)
+![](https://img.shields.io/badge/PIM%20community-1.6-green.svg)
 
 [![Build Status](https://travis-ci.org/akeneo-labs/ExtensionStarter.svg?branch=master)](https://travis-ci.org/akeneo-labs/ExtensionStarter)
 
@@ -13,6 +13,7 @@
 
 | ExtensionStarter | Akeneo PIM Community Edition |
 |:----------------:|:----------------------------:|
+| v0.2.*           | v1.6.*                       |
 | v0.1.*           | v1.5.*                       |
 
 ## Using this starter kit
